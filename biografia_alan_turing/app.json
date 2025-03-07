@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "bat_biogafia_alan_turing",
-    "slug": "bat_biogafia_alan_turing",
+    "name": "biografia_alan_turing",
+    "slug": "biografia_alan_turing",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
