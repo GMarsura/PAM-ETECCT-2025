@@ -2,9 +2,10 @@ import { Image, ScrollView, Text, View } from "react-native";
 import { StyleSheet } from "react-native";
 
 import Header from "../components/Header/Header";
-import Img from "../components/Img/Img"
 import Topic from "../components/Topics/Topic";
 import Footer from "../components/Footer/Footer";
+import texto from "./texto";
+import Pagination from "../components/Pagination/Pagination";
 
 export default function Index() {
 
@@ -33,16 +34,16 @@ export default function Index() {
     <ScrollView className="w-dvw h-dvh bg-[#D9D9D9]">
       <Header />
 
-      <View className="flex flex-row">
+      <View className="flex flex-row justify-center gap-10 mt-10 mb-10">
         <View className="w-[320px]">
-          <Image style={styles.teste} className="aspect-[1/2]" source={require('../../assets/imgs-alan-turing/img1.jpg')} />
+          <Image style={styles.teste} className="aspect-[1/2] mb-8" source={require('../../assets/imgs-alan-turing/img1.jpg')} />
 
-          <View>
-            <Text className="text-[1.5dvw] font-unna italic color-[#656565]">Biografia de</Text>
-            <Text className="text-5xl font-yrsa font-bold color-black">Alan Turing</Text>
+          <View className="mb-8">
+            <Text className="text-2xl font-unna italic color-[#656565]">Biografia de</Text>
+            <Text className="text-4xl font-yrsa font-bold color-black">Alan Turing</Text>
           </View>
 
-          <View>
+          <View className="mb-8 space-y-4">
             {topics.map((item, i)=>(
               <Topic key={i} description={item.description} />
             ))}
@@ -53,10 +54,23 @@ export default function Index() {
           </Text>
         </View>
 
-        <View>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit delectus dolor sunt vel harum dolorum iusto. Odio a excepturi aliquid numquam, deserunt dignissimos praesentium itaque voluptates porro amet maxime. Assumenda totam dignissimos non voluptatum in obcaecati, animi nemo maiores unde libero, sequi, suscipit reprehenderit doloribus itaque eius. Tenetur perferendis sapiente numquam ab iusto perspiciatis necessitatibus praesentium exercitationem quos, eos optio officiis mollitia nesciunt fugiat accusantium sed! Architecto, consequuntur assumenda adipisci quasi nostrum sint deserunt, iste officiis veniam voluptates, nemo quod. Necessitatibus iste, sit, dolores non nam tempore illo voluptatum sunt a soluta placeat consectetur vero magnam repudiandae eligendi dicta nihil.
+        <View className="w-[620px]">
+          <View>
+            <Text className="font-yrsa font-bold text-4xl text-center">ALAN TURING:</Text>
+            <Text className="font-yrsa font-bold text-4xl text-center">O PAI DA COMPUTAÇÃO</Text>
+
+            <Text className="font-unna italic text-xl color-[#656565] text-justify">
+              <Text className="text-6xl">M</Text>atemático e criptógrafo inglês considerado atualmente como o <Text className="underline">pai da computação</Text>, uma vez que, por meio de suas ideias, foi possível desenvolver o que chamamos hoje de <Text className="underline">computador</Text>.
+            </Text>
+
+            <Text className="font-sometypeMono font-bold py-2 border-b-2 border-[#1E1E1E] mb-4 mt-4">São Paulo - 21 de fevereiro de 2025</Text>
+          </View>
+
+          <Text className="text-[1rem] font-sometypeMono text-justify mb-10">
+            {texto.vidaPessoal.corpoTexto}
           </Text>
+
+          <Pagination />
         </View>
       </View>
 
