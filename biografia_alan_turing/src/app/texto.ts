@@ -1,11 +1,8 @@
-
-
-
 const texto = [
   {
     titulo: "Vida Pessoal",
-    corpoTexto: `
-"Alan Mathison Turing nasceu no dia 23 de junho de 1912, em um bairro residencial de Londres, capital da Inglaterra. Seu pai, Julius Mathison Turing, era um oficial que trabalhava na Madras Presidency, uma região administrativa criada pelos britânicos na Índia britânica (na época, a Índia era um território dependente da Inglaterra). Sua mãe, Ethel Sara Stoney, era filha de um engenheiro-chefe que também trabalhava nessa região.
+    corpoTexto: 
+`"Alan Mathison Turing nasceu no dia 23 de junho de 1912, em um bairro residencial de Londres, capital da Inglaterra. Seu pai, Julius Mathison Turing, era um oficial que trabalhava na Madras Presidency, uma região administrativa criada pelos britânicos na Índia britânica (na época, a Índia era um território dependente da Inglaterra). Sua mãe, Ethel Sara Stoney, era filha de um engenheiro-chefe que também trabalhava nessa região.
 
 Durante sua infância, Turing estudou em diversas escolas, tais como Hazelhurst Preparatory School e Sherborne School. Na Sherborne ingressou quando tinha 13 anos, e um episódio peculiar marcou sua entrada nela. No seu primeiro dia de aula, aconteceu uma greve geral na Grã-Bretanha que o impediu ir de trem. Turing resolveu, em sua bicicleta, percorrer os 100 km que separavam a escola de sua casa.
 
@@ -18,8 +15,8 @@ Morcom, porém, faleceu em 1930, em decorrência de tuberculose bovina. A essa a
 
   {
     titulo: "Vida Profissional",
-    corpoTexto:`
-"Em 1936, Turing apresentou uma teoria a respeito da construção de uma máquina capaz de realizar cálculos. Entre 1936 e 1938, estudou matemática e criptografia em Princeton, local em que obteve seu PhD. A partir de 1938, retornou à Inglaterra e passou a integrar uma organização do governo britânico, responsável por quebrar códigos e enigmas, chamada Government Code and Cypher School.
+    corpoTexto:
+`"Em 1936, Turing apresentou uma teoria a respeito da construção de uma máquina capaz de realizar cálculos. Entre 1936 e 1938, estudou matemática e criptografia em Princeton, local em que obteve seu PhD. A partir de 1938, retornou à Inglaterra e passou a integrar uma organização do governo britânico, responsável por quebrar códigos e enigmas, chamada Government Code and Cypher School.
 
 Com o começo da Segunda Guerra Mundial, em setembro de 1939, Turing ingressou no Bletchley Park, a instalação que reuniu grandes matemáticos e criptógrafos e que teve papel crucial na interceptação de mensagens enviadas pelos exércitos do Eixo (formado por Itália, Alemanha e Japão). Nessa instalação, houve uma intensa cooperação de cientistas ingleses, franceses e poloneses para decifrar o código utilizado pelos alemães e seus aliados.
 
@@ -36,8 +33,8 @@ Alan Turing também foi o responsável por recrutar Tommy Flowers para o departa
 
   {
     titulo: "Importância na Segunda Guerra Mundial",
-    corpoTexto:`
-"A primeira bomba eletromecânica desenvolvida por meio dos estudos de Alan Turing ficou pronta em março de 1940 e foi nomeada Victory. As máquinas construídas com base nesse modelo desenvolvido por Alan Turing foram essenciais para os Aliados na Segunda Guerra Mundial, porque lhes deram uma vantagem estratégica extremamente importante: informação.
+    corpoTexto:
+`"A primeira bomba eletromecânica desenvolvida por meio dos estudos de Alan Turing ficou pronta em março de 1940 e foi nomeada Victory. As máquinas construídas com base nesse modelo desenvolvido por Alan Turing foram essenciais para os Aliados na Segunda Guerra Mundial, porque lhes deram uma vantagem estratégica extremamente importante: informação.
 
 As mensagens decifradas pelas Bombe de Turing faziam parte do Ultra — departamento de inteligência britânico responsável por interceptar e decifrar as mensagens enviadas pelos sistemas de comunicação do Eixo. O Ultra teve atuação destacada na receptação de mensagens alemãs e contribuiu também para decifrar códigos japoneses.
 
@@ -56,9 +53,8 @@ O sistema de decodificação desenvolvido por Turing e sua equipe e o trabalho d
 
   {
     titulo: "Maquina de Turing",
-    corpoTexto:`
-"Como mencionado, a máquina criada por Turing, ou a sua bomba eletromecânica, era usada para decifrar mensagens emitidas pelas forças armadas alemãs e criptografadas por uma outra máquina chamada Enigma. Essas mensagens eram emitidas em forma de ondas de rádio, por isso eram facilmente interceptadas em Bletchley Park.
-
+    corpoTexto:
+`"Como mencionado, a máquina criada por Turing, ou a sua bomba eletromecânica, era usada para decifrar mensagens emitidas pelas forças armadas alemãs e criptografadas por uma outra máquina chamada Enigma. Essas mensagens eram emitidas em forma de ondas de rádio, por isso eram facilmente interceptadas em Bletchley Park.
 
 O computador que decifrou os códigos nazistas foi implementado por Alan Turing.
 A Bombe era um enorme computador eletromecânico que pesava quase uma tonelada e tinha cerca de 1,80 m altura. Na parte frontal da máquina, havia 108 eixos, que eram agrupados em nove linhas com 12 espaços cilíndricos. Nesses cilindros eram encaixados os tambores, que, depois de programados manualmente, por meio de cartões com pequenos furos, giravam simultaneamente, combinando as letras de cada tambor com as mensagens captadas em agrupamentos de três letras.
@@ -68,8 +64,8 @@ Os tambores iniciavam a combinação em uma determinada letra e, ao final de cad
   },
   {
     titulo: "Enigma",
-    corpoTexto:`
-"Como mencionado, os poloneses foram os responsáveis por construir as primeiras bombas eletromecânicas. Elas obtiveram algum êxito em decifrar as mensagens criptografadas pela Enigma, no entanto, esse sucesso diminuiu drásticamente conforme a máquina alemã era aprimorada pelos engenheiros nazistas. Uma dessas implementações tornou-a indecifrável. No entanto, a captura de algumas chaves de criptografia possibilitou a quebra dos códigos nazistas. Foi nesse cenário que a programação feita por Alan Turing e sua equipe mostrou a sua utilidade.
+    corpoTexto:
+`"Como mencionado, os poloneses foram os responsáveis por construir as primeiras bombas eletromecânicas. Elas obtiveram algum êxito em decifrar as mensagens criptografadas pela Enigma, no entanto, esse sucesso diminuiu drásticamente conforme a máquina alemã era aprimorada pelos engenheiros nazistas. Uma dessas implementações tornou-a indecifrável. No entanto, a captura de algumas chaves de criptografia possibilitou a quebra dos códigos nazistas. Foi nesse cenário que a programação feita por Alan Turing e sua equipe mostrou a sua utilidade.
 
 O cientista da computação teve a ideia de implementar uma nova bomba eletromecânica, mais eficiente que as anteriores. Para tanto, programou-a prevendo a existência de trechos que se repetiam em grande parte das mensagens, além disso, soube como explorar uma grande falha na criptografia usada pela Enigma, da qual falaremos mais adiante.
 
@@ -84,8 +80,8 @@ Isso indicava que se a frase original contivesse a letra A, por exemplo, a letra
   },
   {
     titulo: "Ultimos anos",
-    corpoTexto:`
-"Depois da guerra, Turing prosseguiu seu trabalho no desenvolvimento de um computador e de uma inteligência artificial e trabalhou em locais como o National Physical Laboratory, vinculado ao governo britânico, e a Universidade de Manchester.
+    corpoTexto:
+`"Depois da guerra, Turing prosseguiu seu trabalho no desenvolvimento de um computador e de uma inteligência artificial e trabalhou em locais como o National Physical Laboratory, vinculado ao governo britânico, e a Universidade de Manchester.
 
 Em janeiro de 1952, teve sua casa assaltada pelo rapaz com quem vivia um relacionamento, e, ao admitir para a polícia seu envolvimento com o assaltante, foi indiciado por “indecência grave”. Naquela época, a homossexualidade era proibida na Inglaterra, e isso levou Turing a julgamento.
 
@@ -98,8 +94,8 @@ Em 2009, o primeiro-ministro britânico Gordon Brown desculpou-se publicamente p
   },
   {
     titulo: "Legado",
-    corpoTexto:`
-"O maior legado deixado pelo matemático Alan Turing é, sem dúvidas, a invenção da máquina de Turing. Esta é um modelo teórico que pode ser usado para implementar todos os aspectos lógicos e matemáticos de um computador, independentemente de como ele venha a ser construído (mecânica ou eletronicamente, por exemplo).
+    corpoTexto:
+`"O maior legado deixado pelo matemático Alan Turing é, sem dúvidas, a invenção da máquina de Turing. Esta é um modelo teórico que pode ser usado para implementar todos os aspectos lógicos e matemáticos de um computador, independentemente de como ele venha a ser construído (mecânica ou eletronicamente, por exemplo).
 
 A máquina de Turing foi criada em 1936, muito tempo antes da invenção dos computadores modernos. A maior parte dos nossos dispositivos eletrônicos, como celulares e computadores, são máquinas programáveis, que operam de acordo com os fundamentos da máquina de Turing. As calculadoras, por exemplo, operam como as primeiras máquinas de Turing, programadas para realizar cálculos simples.
 
@@ -108,9 +104,6 @@ Como citado, a participação de Turing na decifração da Enigma e na construç
 Além de ter construído as bases da computação moderna, Turing também desenvolveu os primeiros testes capazes de distinguir a inteligência artificial da inteligência humana. Atualmente os testes de Turing são usados em diversos sites e dispositivos, promovendo maior segurança para os seus usuários."
     `
   },
-  
-  
 ]
-  
 
 export default texto;
