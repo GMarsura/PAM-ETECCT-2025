@@ -6,29 +6,38 @@ import Topic from "../components/Topics/Topic";
 import Footer from "../components/Footer/Footer";
 import texto from "./texto";
 import Pagination from "../components/Pagination/Pagination";
+import { useState } from "react";
 
 export default function Index() {
+  const [index, setIndex] = useState(0)
+  
 
-  const topics = [
-    {
-      description: 'Vida Pessoal'
-    },
-    {
-      description: 'Vida Profissional'
-    },
-    {
-      description: 'Maquina de Turing'
-    },
-    {
-      description: 'Enigma'
-    },
-    {
-      description: 'Ultimos anos'
-    },
-    {
-      description: 'Legado'
-    }
+  const currentDate = new Date();
+  const currentDay = currentDate.getDay();
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
+
+
+
+
+  const meses = [
+    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
   ];
+
+
+
+  const changeText = (value:number)=>{
+      var vIndex : number = index;
+      vIndex += value;
+      if(vIndex <= 0){
+        vIndex = 0;
+      }else if(vIndex >= texto.length){
+        vIndex = 0;
+      }
+      setIndex(vIndex);
+     
+  }
 
   return (
     <ScrollView className="w-dvw h-dvh bg-[#D9D9D9]">
@@ -44,8 +53,8 @@ export default function Index() {
           </View>
 
           <View className="mb-8 space-y-4">
-            {topics.map((item, i)=>(
-              <Topic key={i} description={item.description} />
+            {texto.map((item, i)=>(
+              <Topic key={i} description={item.titulo} />
             ))}
           </View>
 
@@ -63,14 +72,18 @@ export default function Index() {
               <Text className="text-6xl">M</Text>atemático e criptógrafo inglês considerado atualmente como o <Text className="underline">pai da computação</Text>, uma vez que, por meio de suas ideias, foi possível desenvolver o que chamamos hoje de <Text className="underline">computador</Text>.
             </Text>
 
-            <Text className="font-sometypeMono font-bold py-2 border-b-2 border-[#1E1E1E] mb-4 mt-4">São Paulo - 21 de fevereiro de 2025</Text>
+            
+            
+            
+            <Text className="font-sometypeMono font-bold py-2 border-b-2 border-[#1E1E1E] mb-4 mt-4">{`São Paulo - ${currentDay} de ${meses[(currentMonth)]} de ${currentYear}`}</Text>
           </View>
 
-          <Text className="text-[1rem] font-sometypeMono text-justify mb-10">
-            {texto.vidaPessoal.corpoTexto}
-          </Text>
 
-          <Pagination />
+           
+          <Text className="text-4xl font-yrsa text-center mb-7 mt-6"   children={texto[index].titulo}/>
+          <Text className="text-[1rem] font-sometypeMono text-justify mb-10" children={texto[index].corpoTexto}/>
+           
+          <Pagination changeText = {changeText} index={index} length ={texto.length}/>
         </View>
       </View>
 
