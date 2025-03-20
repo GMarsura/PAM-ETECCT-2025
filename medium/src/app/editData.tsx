@@ -1,8 +1,15 @@
 import { Link } from "expo-router";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import CardNota from "../components/CardNota/CardNota";
+import Aluno from "../classes/aluno";
+
+
 
 export default function EditData() {
+
+  const ortiz = new Aluno("Ortiz", [1, 2, 3]);
+  console.log(ortiz);
+
   return (
     <ScrollView className="bg-indigo-500">
 
