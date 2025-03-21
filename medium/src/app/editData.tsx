@@ -1,15 +1,43 @@
 import { Link } from "expo-router";
+import { useRoute } from "@react-navigation/native";
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import CardNota from "../components/CardNota/CardNota";
 
 import Icon from "react-native-remix-icon";
+import { useState } from "react";
 
 
 
 
 export default function EditData() {
 
+ const route = useRoute();
+ const {nomeAluno, notasAluno, situacaoAluno } = route.params;
  
+
+
+
+ const [nome, setNome] = useState(nomeAluno);
+ const [newNota, setNewNota] = useState();
+ const [notas,setNotas] = useState(notasAluno);
+
+
+const handleNota = (input)=>{
+  const numberValue = input.replace(/[^0-9]/g, '');
+
+  
+  if(numberValue === '' || parseInt(numberValue) <=10){
+    setNewNota(numberValue)
+  }
+  
+}
+
+
+const addNota = (v)=>{
+  console.log(v)
+}
+
+
 
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent} className="w-dvh h-dvh bg-gradient-to-br from-slate-500 to-slate-800">
@@ -28,15 +56,15 @@ export default function EditData() {
           </View>
 
           {/* Input Nome */}
-          <TextInput placeholder="Nome do aluno" className="font-manrope p-2 bg-white rounded-md border-2 border-slate-300 mb-4 placeholder:color-slate-500"></TextInput>
+          <TextInput value={nome} onChangeText={setNome} placeholder="Nome do aluno" className="font-manrope p-2 bg-white rounded-md border-2 border-slate-300 mb-4 placeholder:color-slate-500"></TextInput>
 
           {/* Input Nota Aluno */}
           <View className="flex flex-row gap-3 mb-8">
             {/* Input */}
-            <TextInput keyboardType="numeric" placeholder="Nota do aluno. Ex.: 7.5" className="w-full font-manrope p-2 bg-white rounded-md border-2 border-slate-300 placeholder:color-slate-500"></TextInput>
+            <TextInput value={newNota} onChangeText={handleNota}  keyboardType="numeric" placeholder="Nota do aluno. Ex.: 7.5" className="w-full font-manrope p-2 bg-white rounded-md border-2 border-slate-300 placeholder:color-slate-500"></TextInput>
 
             {/* Botão Adicionar nota */}
-            <Pressable className="w-[38px] h-[38px] flex justify-center items-center rounded-md bg-violet-500 hover:bg-violet-600">
+            <Pressable className="w-[38px] h-[38px] flex justify-center items-center rounded-md bg-violet-500 hover:bg-violet-600" onPress={()=> addNota(newNota)}>
               <Text>
                 <Icon name="add-line" size={24} color="#fff" />
               </Text>            
@@ -46,10 +74,16 @@ export default function EditData() {
           {/* Cards Notas */}
           {/* Quando houver mais de 3 cards (height > 174px), o scroll ativa */}
           <View className="h-[174px] overflow-y-auto p-3 bg-slate-300 rounded-md">
-            <CardNota nota={0} />
-            <CardNota nota={0} />
-            <CardNota nota={0} />
-            <CardNota nota={0} />
+            
+                {
+                  notas.map((item)=>(
+                    <CardNota nota={item}/>
+                  ))
+                }
+                
+                
+              
+            
           </View>
 
           {/* Limpar tudo */}

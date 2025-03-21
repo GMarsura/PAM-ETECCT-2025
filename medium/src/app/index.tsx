@@ -63,7 +63,7 @@ export default function Index() {
 
         {/* Botão Adicionar Alunos */}
         
-          <Pressable className="w-full py-2 bg-violet-500 rounded-md hover:bg-violet-600" onPress={() => navigation.navigate("editData", {})}>
+          <Pressable className="w-full py-2 bg-violet-500 rounded-md hover:bg-violet-600" onPress={() => navigation.navigate("editData", {nomeAluno: "", notasAluno:[1,2,3], situacaoAluno: false})}>
             <Text className="color-zinc-100 text-xl text-center font-manrope">Adicionar Alunos</Text>
           </Pressable>
         
