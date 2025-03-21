@@ -1,9 +1,11 @@
 export default class Aluno{
+    idAluno: number;
     nomeAluno: string;
     notasAluno: Array<number>;
     situacaoAluno: boolean = false;
 
-    constructor(nome: string, notas: Array<number>) {
+    constructor(idAluno:number,nome: string, notas: Array<number>) {
+        this.idAluno = idAluno;
         this.nomeAluno = nome;
         this.notasAluno = notas;
         
@@ -12,11 +14,17 @@ export default class Aluno{
     }
 
     getMedia(notas: Array<number>) {
-        const somaNotas = notas.reduce((acc, num) => {
-            return acc + num;
-        })
-        const media = somaNotas / notas.length;
+      
+    if(this.notasAluno.length >= 0){
+        var notasSomadas = this.notasAluno.reduce((acc, num) => acc + num, 0);;
+        var media = notasSomadas / this.notasAluno.length;
         return media;
+    }else{
+        return 0
+    }
+      
+
+      
     }
 
     verificaSituacao() {

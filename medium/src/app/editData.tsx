@@ -4,13 +4,12 @@ import CardNota from "../components/CardNota/CardNota";
 
 import Icon from "react-native-remix-icon";
 
-import Aluno from "../classes/Aluno";
+
 
 
 export default function EditData() {
 
-  const ortiz = new Aluno("Ortiz", [1, 2, 3]);
-  console.log(ortiz);
+ 
 
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent} className="w-dvh h-dvh bg-gradient-to-br from-slate-500 to-slate-800">

@@ -1,10 +1,36 @@
 import { Link } from "expo-router";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import CardAluno from "../components/CardAluno/CardAluno";
-
 import Icon from "react-native-remix-icon";
+import { useState } from "react";
+import Aluno from "../classes/Aluno";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function Index() {
+  const navigation = useNavigation();
+
+  const aluno1 = new Aluno(1,'Gabrieggl', [1,2]);
+  const aluno2 = new Aluno(2,'Thiago', [1,3]);
+  const aluno3 = new Aluno(3,'Mavine', [1,4]);
+
+  const [alunos, setAlunos] = useState([aluno1, aluno2, aluno3]);
+
+  const deletarTodosOsAlunos = () =>{
+    setAlunos([])
+  }
+
+  const deletarAluno = (id:number)=>{
+    setAlunos(alunos.filter((aluno)=> aluno.idAluno !== id))
+  }
+
+  
+
+
+
+
+
+
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent} className="w-dvh h-dvh bg-gradient-to-br from-slate-500 to-slate-800">
 
@@ -14,17 +40,20 @@ export default function Index() {
 
           {/* Cards Alunos */}   
           {/* 254 -> 4 cards / 318 -> 5 cards */}
+          
+          
+          
           <View className="min-h-[154px] max-h-[318px] overflow-y-auto p-3 bg-slate-300 rounded-md sm:max-h-[254px]">
-            <CardAluno aluno={{}} />
-            <CardAluno aluno={{}} />
-            <CardAluno aluno={{}} />
-            <CardAluno aluno={{}} />
-            <CardAluno aluno={{}} />
-            
+            {
+              alunos.map((item)=>(
+                <CardAluno aluno={item} deletarAluno={deletarAluno}/>
+              ))
+            }
+             
           </View>
 
           {/* Limpar tudo */}
-          <Pressable onPress={() => console.log("Apagar todas as medias")} className="w-fit mt-4 mb-20">
+          <Pressable onPress={deletarTodosOsAlunos} className="w-fit mt-4 mb-20">
             <Text className="flex flex-row gap-1 text-base font-manrope font-medium color-zinc-800 hover:underline">
               <Icon name="delete-bin-line" size={20} color="#27272a" />
               Limpar Médias
@@ -33,11 +62,11 @@ export default function Index() {
         </View>
 
         {/* Botão Adicionar Alunos */}
-        <Link href={"/editData"}>
-          <Pressable className="w-full py-2 bg-violet-500 rounded-md hover:bg-violet-600">
+        
+          <Pressable className="w-full py-2 bg-violet-500 rounded-md hover:bg-violet-600" onPress={() => navigation.navigate("editData", {})}>
             <Text className="color-zinc-100 text-xl text-center font-manrope">Adicionar Alunos</Text>
           </Pressable>
-        </Link>
+        
       </View>
 
     </ScrollView>
