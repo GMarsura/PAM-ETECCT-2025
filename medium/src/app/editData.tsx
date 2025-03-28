@@ -99,9 +99,10 @@ export default function EditData() {
         const novasNotas = [...notas, notaNumerica];
         setNotas(novasNotas);
         calcularMedia(novasNotas);
-        setNewNota("");
+        
       }
     }
+    setNewNota("");
   };
 
   
@@ -128,6 +129,16 @@ export default function EditData() {
 
   }
 
+  const handleNota = (input)=>{
+    const numberValue = input.replace(/[^0-9]/g, '');
+  
+    
+    if(numberValue === '' || parseInt(numberValue) <=10){
+      setNewNota(numberValue)
+    }
+    
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent} className="w-dvh h-dvh bg-gradient-to-br from-slate-500 to-slate-800">
       <View className="w-full h-full flex flex-col justify-between px-4 py-8 bg-slate-200 rounded-xl sm:w-[420px] sm:h-max sm:p-8">
@@ -147,7 +158,7 @@ export default function EditData() {
 
           {/* Input Nota Aluno */}
           <View className="flex flex-row gap-3 mb-8">
-            <TextInput value={newNota} onChangeText={setNewNota} keyboardType="numeric" placeholder="Nota do aluno. Ex.: 7.5" className="w-full font-manrope p-2 bg-white rounded-md border-2 border-slate-300 placeholder:color-slate-500"></TextInput>
+            <TextInput value={newNota} onChangeText={handleNota} keyboardType="numeric" placeholder="Nota do aluno. Ex.: 7.5" className="w-full font-manrope p-2 bg-white rounded-md border-2 border-slate-300 placeholder:color-slate-500"></TextInput>
 
             <Pressable className="w-[38px] h-[38px] flex justify-center items-center rounded-md bg-violet-500 hover:bg-violet-600" onPress={addNota}>
               <Text>

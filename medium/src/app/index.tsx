@@ -34,7 +34,7 @@ export default function Index() {
   
     loadData();
   }, []);
-   ponente for montado
+
 
 
 
