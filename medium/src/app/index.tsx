@@ -56,8 +56,10 @@ export default function Index() {
   };
 
   const deletarAluno = async(id: number) => {
-    setAlunos(alunos.filter((aluno) => aluno.idAluno !== id));
-    await AsyncStorage.setItem('alunos', JSON.stringify(alunos));
+
+    const pre = alunos.filter((aluno) => aluno.idAluno !== id);
+    setAlunos(pre);
+    await AsyncStorage.setItem('alunos', JSON.stringify(pre));
   };
 
   return (

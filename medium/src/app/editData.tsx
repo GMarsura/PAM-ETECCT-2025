@@ -61,7 +61,7 @@ export default function EditData() {
       const savedData = await AsyncStorage.getItem("novoAluno");
       if (savedData) {
         const parsedData = JSON.parse(savedData);
-        const novoAluno = { idAluno: Date.now(), ...parsedData };o
+        const novoAluno = { idAluno: Date.now(), ...parsedData };
 
         
         const alunosSalvos = await AsyncStorage.getItem("alunos");
