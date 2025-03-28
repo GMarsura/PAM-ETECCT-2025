@@ -20,7 +20,7 @@ export default function Index() {
         if (savedData) {
           const parsedData = JSON.parse(savedData);
   
-          // Converter cada objeto comum para uma instância de Aluno
+          
           const alunosConvertidos = parsedData.map(
             (item) => new Aluno(item.idAluno, item.nomeAluno, item.notasAluno)
           );
@@ -34,7 +34,7 @@ export default function Index() {
   
     loadData();
   }, []);
-   // Apenas executa uma vez quando o componente for montado
+   ponente for montado
 
 
 

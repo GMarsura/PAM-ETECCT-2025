@@ -61,16 +61,16 @@ export default function EditData() {
       const savedData = await AsyncStorage.getItem("novoAluno");
       if (savedData) {
         const parsedData = JSON.parse(savedData);
-        const novoAluno = { idAluno: Date.now(), ...parsedData }; // Cria um novo objeto aluno
+        const novoAluno = { idAluno: Date.now(), ...parsedData };o
 
-        // Obtém a lista de alunos existente no AsyncStorage
+        
         const alunosSalvos = await AsyncStorage.getItem("alunos");
         const listaAlunos = alunosSalvos ? JSON.parse(alunosSalvos) : [];
 
-        // Adiciona o novo aluno à lista sem sobrescrever os anteriores
+     
         const novaLista = [...listaAlunos, novoAluno];
         
-        // Salva a lista atualizada no AsyncStorage
+      
         await AsyncStorage.setItem("alunos", JSON.stringify(novaLista));
       }
     } catch (error) {
