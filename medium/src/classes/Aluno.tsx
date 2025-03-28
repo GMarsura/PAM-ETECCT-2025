@@ -15,8 +15,8 @@ export default class Aluno{
 
     getMedia(notas: Array<number>) {
       
-    if(this.notasAluno.length >= 0){
-        var notasSomadas = this.notasAluno.reduce((acc, num) => acc + num, 0);;
+    if(this.notasAluno.length > 0){
+        var notasSomadas = this.notasAluno.reduce((acc, num) => acc + num, 0);
         var media = notasSomadas / this.notasAluno.length;
         return media;
     }else{
